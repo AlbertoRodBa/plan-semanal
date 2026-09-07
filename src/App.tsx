@@ -43,9 +43,12 @@ function diaDeHoy(): DiaSemana {
 
 type Tema = 'claro' | 'oscuro' | 'fantasma' | 'hielo';
 
+type Vista = 'horizontal' | 'vertical';
+
 export default function App() {
   const [estado, setEstado] = useLocalStorage<EstadoApp>('plan-semanal-estado', ESTADO_INICIAL);
   const [tema, setTema] = useLocalStorage<Tema>('plan-semanal-tema', 'claro');
+  const [vista, setVista] = useLocalStorage<Vista>('plan-semanal-vista', 'horizontal');
   const [busqueda, setBusqueda] = useState('');
   const [modalTarea, setModalTarea] = useState<{ tarea: Tarea | null; dia: DiaSemana } | null>(null);
   const [confirmando, setConfirmando] = useState<
@@ -217,6 +220,8 @@ export default function App() {
           onBusqueda={setBusqueda}
           tema={tema}
           onSeleccionarTema={setTema}
+          vista={vista}
+          onCambiarVista={setVista}
           onRestablecer={() => setConfirmando({ tipo: 'reset' })}
         />
 
@@ -226,11 +231,16 @@ export default function App() {
           onDragStart={handleDragStart}
           onDragEnd={handleDragEnd}
         >
-          <div className="mb-6 flex gap-3 overflow-x-auto pb-2 md:grid md:grid-cols-7 md:gap-3 md:overflow-visible">
+          <div className={`mb-6 gap-3 pb-2 ${
+            vista === 'horizontal'
+              ? 'flex overflow-x-auto md:grid md:grid-cols-7 md:overflow-visible'
+              : 'flex flex-col md:grid md:grid-cols-1'
+          }`}>
             {DIAS.map((d) => (
               <DayColumn
                 key={d.key}
                 diaKey={d.key}
+                vista={vista}
                 etiqueta={d.corto}
                 esHoy={d.key === hoy}
                 tareas={tareasPorDia(d.key)}

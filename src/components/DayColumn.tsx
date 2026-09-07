@@ -6,6 +6,7 @@ import { TaskCard } from './TaskCard';
 
 type Props = {
   diaKey: DiaSemana;
+  vista: 'horizontal' | 'vertical';
   etiqueta: string;
   esHoy: boolean;
   tareas: Tarea[];
@@ -19,6 +20,7 @@ type Props = {
 
 export function DayColumn({
   diaKey,
+  vista,
   etiqueta,
   esHoy,
   tareas,
@@ -33,7 +35,7 @@ export function DayColumn({
   const categoriaPorId = (id: string | null) => (id ? categorias.find((c) => c.id === id) ?? null : null);
 
   return (
-    <div className="flex w-72 shrink-0 flex-col rounded-2xl border border-borde bg-fondo/60 p-3 md:w-full">
+    <div className={`flex shrink-0 flex-col rounded-2xl border border-borde bg-fondo/60 p-3 ${vista === 'horizontal' ? 'w-72' : 'w-full'} md:w-full`}>
       <div className="mb-3 flex items-center justify-between px-1">
         <div className="flex items-center gap-2">
           <h3 className={`font-display text-sm font-semibold ${esHoy ? 'text-musgo-600' : 'text-tinta'}`}>

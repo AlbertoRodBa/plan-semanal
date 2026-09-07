@@ -1,4 +1,4 @@
-import { Moon, RotateCcw, Search, Snowflake, Sun } from 'lucide-react';
+import { Columns3, Moon, RotateCcw, Rows3, Search, Snowflake, Sun } from 'lucide-react';
 import { useState } from 'react';
 
 function IconoFantasma({ size = 16 }: { size?: number }) {
@@ -10,6 +10,8 @@ type Props = {
   onBusqueda: (v: string) => void;
   tema: 'claro' | 'oscuro' | 'fantasma' | 'hielo';
   onSeleccionarTema: (tema: 'claro' | 'oscuro' | 'fantasma' | 'hielo') => void;
+  vista: 'horizontal' | 'vertical';
+  onCambiarVista: (vista: 'horizontal' | 'vertical') => void;
   onRestablecer: () => void;
 };
 
@@ -18,6 +20,8 @@ export function Header({
   onBusqueda,
   tema,
   onSeleccionarTema,
+  vista,
+  onCambiarVista,
   onRestablecer,
 }: Props) {
   const [menuAbierto, setMenuAbierto] = useState(false);
@@ -92,6 +96,15 @@ export function Header({
               </div>
             )}
           </div>
+
+          <button
+            onClick={() => onCambiarVista(vista === 'horizontal' ? 'vertical' : 'horizontal')}
+            className="flex items-center gap-1.5 rounded-lg border border-borde bg-fondo px-3 py-2 text-xs font-medium text-tinta-suave transition hover:border-musgo-200 hover:bg-musgo-50 hover:text-musgo-600"
+            title={vista === 'horizontal' ? 'Cambiar a vista vertical' : 'Cambiar a vista horizontal'}
+          >
+            {vista === 'horizontal' ? <Rows3 size={14} /> : <Columns3 size={14} />}
+            {vista === 'horizontal' ? 'Vertical' : 'Horizontal'}
+          </button>
 
           <button
             onClick={onRestablecer}
