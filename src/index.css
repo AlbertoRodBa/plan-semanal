@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Paleta base — blanco invierno + verde limpio */
+  --color-fondo: #f7f9f7;          /* blanco frío muy claro */
+  --color-superficie: #ffffff;
+  --color-borde: #e7ece5;
+
+  --color-musgo-50: #f3f9ef;
+  --color-musgo-100: #e3efd6;
+  --color-musgo-200: #cfe4ad;
+  --color-musgo-300: #aad477;
+  --color-musgo-400: #8fc34e;
+  --color-musgo-500: #76b53f;      /* verde más fuerte y vivo */
+  --color-musgo-600: #609b32;
+  --color-musgo-700: #4b7d2b;
+  --color-musgo-800: #386525;
+  --color-musgo-900: #28521f;
+
+  --color-salvia-50: #f4f8f3;
+  --color-salvia-100: #edf3ea;
+  --color-salvia-200: #dfeadf;
+  --color-salvia-300: #cfdecf;
+
+  --color-tinta: #222923;
+  --color-tinta-suave: #58615b;
+
+  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-suave: 0 1px 2px rgba(44, 46, 40, 0.06), 0 4px 12px rgba(44, 46, 40, 0.05);
+}
+
+/* ---- Modo oscuro: negro con tinte azulado muy sutil + verde musgo vivo ---- */
+.dark {
+  --color-fondo: #181d1f;
+  --color-superficie: #20272d;
+  --color-borde: #2d373d;
+
+  --color-musgo-50: #1e2b1f;
+  --color-musgo-100: #2b3c2b;
+  --color-musgo-200: #3f5c3c;
+  --color-musgo-300: #597d4d;
+  --color-musgo-400: #7da35a;
+  --color-musgo-500: #9fc76a;
+  --color-musgo-600: #b2d87d;
+  --color-musgo-700: #c8e59a;
+  --color-musgo-800: #deefbe;
+  --color-musgo-900: #edf9dc;
+
+  --color-salvia-200: #2f4431;
+  --color-salvia-300: #405c3f;
+
+  --color-tinta: #edf1eb;
+  --color-tinta-suave: #bac1b8;
+}
+
+/* ---- Tema fantasma: oscuro morado ---- */
+html.theme-fantasma {
+  color-scheme: dark;
+  --color-fondo: #120f1a;
+  --color-superficie: #1b1524;
+  --color-borde: #2e2138;
+
+  --color-musgo-50: #1d1627;
+  --color-musgo-100: #291f35;
+  --color-musgo-200: #433151;
+  --color-musgo-300: #513b63;
+  --color-musgo-400: #8063a5;
+  --color-musgo-500: #9a7abb;
+  --color-musgo-600: #ad91ca;
+  --color-musgo-700: #bea7d6;
+  --color-musgo-800: #cfbee1;
+  --color-musgo-900: #e5daf0;
+
+  --color-salvia-200: #2d2438;
+  --color-salvia-300: #58406f;
+
+  --color-tinta: #e9e3f2;
+  --color-tinta-suave: #aaa0bc;
+}
+
+/* ---- Tema hielo: claro azulado ---- */
+html.theme-hielo {
+  color-scheme: light;
+  --color-fondo: #fcfeff;
+  --color-superficie: #ffffff;
+  --color-borde: #d5e8fb;
+
+  --color-musgo-50: #edf7ff;
+  --color-musgo-100: #dceeff;
+  --color-musgo-200: #bce7ff;
+  --color-musgo-300: #91d4fa;
+  --color-musgo-400: #3395ff;
+  --color-musgo-500: #007bff;
+  --color-musgo-600: #0069d9;
+  --color-musgo-700: #0056b3;
+  --color-musgo-800: #00458f;
+  --color-musgo-900: #003b73;
+
+  --color-salvia-50: #f3faff;
+  --color-salvia-100: #e7f2ff;
+  --color-salvia-200: #d0edff;
+  --color-salvia-300: #afe0fb;
+
+  --color-tinta: #1d2b3d;
+  --color-tinta-suave: #58718d;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    background-color: var(--color-fondo);
+    color: var(--color-tinta);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background-color: var(--color-musgo-200);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-musgo-500);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .scrollbar-fina::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-fina::-webkit-scrollbar-thumb {
+    background-color: var(--color-borde);
+    border-radius: 999px;
+  }
+}
