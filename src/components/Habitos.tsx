@@ -71,7 +71,7 @@ export function Habitos({ habitos, onAgregar, onToggleDia, onEliminar }: Props) 
                         type="checkbox"
                         checked={!!h.completadoDias[d.key]}
                         onChange={() => onToggleDia(h.id, d.key)}
-                        className="h-3.5 w-3.5 accent-musgo-500"
+                        className="h-3.5 w-3.5 accent-[#88E788]"
                         aria-label={`${h.texto} - ${d.label}`}
                       />
                     </td>

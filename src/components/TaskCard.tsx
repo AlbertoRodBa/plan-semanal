@@ -45,7 +45,7 @@ export function TaskCard({ tarea, categoria, onToggle, onEditar, onEliminar, onD
           type="checkbox"
           checked={tarea.completada}
           onChange={onToggle}
-          className="mt-1 h-4 w-4 shrink-0 accent-musgo-500"
+          className="mt-1 h-4 w-4 shrink-0 accent-[#88E788]"
           aria-label={tarea.completada ? 'Marcar como pendiente' : 'Marcar como completada'}
         />
 
