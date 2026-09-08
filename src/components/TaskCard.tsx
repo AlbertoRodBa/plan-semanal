@@ -71,7 +71,7 @@ export function TaskCard({ tarea, categoria, onToggle, onEditar, onEliminar, onD
         </div>
       </div>
 
-      <div className="mt-2 flex justify-end gap-1 opacity-0 transition group-hover:opacity-100 group-focus-within:opacity-100">
+      <div className="pointer-events-none mt-2 flex justify-end gap-1 opacity-0 transition group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
         <button
           onClick={onDuplicar}
           className="rounded-md p-1.5 text-tinta-suave transition hover:bg-fondo hover:text-musgo-600"

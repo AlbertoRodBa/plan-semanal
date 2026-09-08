@@ -36,7 +36,7 @@ export function Header({
   const IconoTemaActual = opcionesTema.find((opcion) => opcion.valor === tema)?.icon ?? Sun;
 
   return (
-    <header className="mb-6 rounded-2xl border border-borde bg-superficie/90 p-4 shadow-[0_1px_2px_rgba(20,23,18,0.04),0_8px_22px_rgba(20,23,18,0.04)] backdrop-blur-sm sm:p-5">
+    <header className="relative z-30 mb-6 rounded-2xl border border-borde bg-superficie/90 p-4 shadow-[0_1px_2px_rgba(20,23,18,0.04),0_8px_22px_rgba(20,23,18,0.04)] backdrop-blur-sm sm:p-5">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-musgo-500 text-white shadow-sm shadow-musgo-500/30">
@@ -70,7 +70,7 @@ export function Header({
             </button>
 
             {menuAbierto && (
-              <div className="absolute right-0 top-full z-20 mt-2 w-44 rounded-xl border border-borde bg-superficie p-1.5 shadow-[0_8px_22px_rgba(20,23,18,0.08)]">
+              <div className="absolute right-0 top-full z-40 mt-2 w-44 rounded-xl border border-borde bg-superficie p-1.5 shadow-[0_8px_22px_rgba(20,23,18,0.08)]">
                 {opcionesTema.map(({ valor, label, icon: Icono }) => (
                   <button
                     key={valor}
