@@ -6,6 +6,7 @@
   /* Paleta base — blanco invierno + verde limpio */
   --color-fondo: #f7f9f7;          /* blanco frío muy claro */
   --color-superficie: #ffffff;
+  --color-tarea: var(--color-superficie);
   --color-borde: #e7ece5;
 
   --color-musgo-50: #f3f9ef;
@@ -62,6 +63,7 @@ html.theme-fantasma {
   color-scheme: dark;
   --color-fondo: #120f1a;
   --color-superficie: #1b1524;
+  --color-tarea: #281e32;
   --color-borde: #2e2138;
 
   --color-musgo-50: #1d1627;

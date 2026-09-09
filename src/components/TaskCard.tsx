@@ -29,7 +29,7 @@ export function TaskCard({ tarea, categoria, onToggle, onEditar, onEliminar, onD
     <div
       ref={setNodeRef}
       style={style}
-      className="group rounded-xl border border-borde bg-superficie p-3 shadow-sm transition hover:shadow-suave"
+      className="group rounded-xl border border-borde bg-tarea p-3 shadow-sm transition hover:shadow-suave"
     >
       <div className="flex items-start gap-2">
         <button
