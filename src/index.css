@@ -58,6 +58,32 @@
   --color-tinta-suave: #bac1b8;
 }
 
+/* ---- Tema oscuro pro: negro cercano + contraste técnico ---- */
+html.theme-oscuro-pro {
+  color-scheme: dark;
+  --color-fondo: #090b0d;
+  --color-superficie: #111519;
+  --color-tarea: #151b20;
+  --color-borde: #263039;
+
+  --color-musgo-50: #14251a;
+  --color-musgo-100: #1c3925;
+  --color-musgo-200: #285536;
+  --color-musgo-300: #3d7a4e;
+  --color-musgo-400: #62a96f;
+  --color-musgo-500: #83d18a;
+  --color-musgo-600: #a0e1a0;
+  --color-musgo-700: #b9edb2;
+  --color-musgo-800: #d0f5c8;
+  --color-musgo-900: #e5fbe0;
+
+  --color-salvia-200: #20352a;
+  --color-salvia-300: #31513b;
+
+  --color-tinta: #f0f4f1;
+  --color-tinta-suave: #9eaba4;
+}
+
 /* ---- Tema fantasma: oscuro morado ---- */
 html.theme-fantasma {
   color-scheme: dark;

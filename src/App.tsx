@@ -41,7 +41,7 @@ function diaDeHoy(): DiaSemana {
   return mapa[indice];
 }
 
-type Tema = 'claro' | 'oscuro' | 'fantasma' | 'hielo';
+type Tema = 'claro' | 'oscuro' | 'oscuro-pro' | 'fantasma' | 'hielo';
 
 type Vista = 'horizontal' | 'vertical';
 
@@ -65,14 +65,19 @@ export default function App() {
     const temas: Record<Tema, string> = {
       claro: 'claro',
       oscuro: 'dark',
+      'oscuro-pro': 'oscuro-pro',
       fantasma: 'fantasma',
       hielo: 'hielo',
     };
 
     const current = temas[tema];
     document.documentElement.dataset.theme = current;
-    document.documentElement.classList.toggle('dark', current === 'dark' || current === 'fantasma');
+    document.documentElement.classList.toggle(
+      'dark',
+      current === 'dark' || current === 'oscuro-pro' || current === 'fantasma'
+    );
     document.documentElement.classList.toggle('theme-fantasma', current === 'fantasma');
+    document.documentElement.classList.toggle('theme-oscuro-pro', current === 'oscuro-pro');
     document.documentElement.classList.toggle('theme-hielo', current === 'hielo');
   }, [tema]);
 

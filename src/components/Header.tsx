@@ -1,4 +1,4 @@
-import { Columns3, Moon, RotateCcw, Rows3, Search, Snowflake, Sun } from 'lucide-react';
+import { Columns3, Moon, MoonStar, RotateCcw, Rows3, Search, Snowflake, Sun } from 'lucide-react';
 import { useState } from 'react';
 
 function IconoFantasma({ size = 16 }: { size?: number }) {
@@ -8,8 +8,8 @@ function IconoFantasma({ size = 16 }: { size?: number }) {
 type Props = {
   busqueda: string;
   onBusqueda: (v: string) => void;
-  tema: 'claro' | 'oscuro' | 'fantasma' | 'hielo';
-  onSeleccionarTema: (tema: 'claro' | 'oscuro' | 'fantasma' | 'hielo') => void;
+  tema: 'claro' | 'oscuro' | 'oscuro-pro' | 'fantasma' | 'hielo';
+  onSeleccionarTema: (tema: 'claro' | 'oscuro' | 'oscuro-pro' | 'fantasma' | 'hielo') => void;
   vista: 'horizontal' | 'vertical';
   onCambiarVista: (vista: 'horizontal' | 'vertical') => void;
   onRestablecer: () => void;
@@ -29,6 +29,7 @@ export function Header({
   const opcionesTema = [
     { valor: 'claro', label: 'Claro', icon: Sun },
     { valor: 'oscuro', label: 'Oscuro', icon: Moon },
+    { valor: 'oscuro-pro', label: 'Oscuro Pro', icon: MoonStar },
     { valor: 'fantasma', label: 'Fantasma', icon: IconoFantasma },
     { valor: 'hielo', label: 'Hielo', icon: Snowflake },
   ] as const;
