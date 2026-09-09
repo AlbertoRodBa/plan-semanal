@@ -137,6 +137,34 @@ html.theme-hielo {
   --color-tinta-suave: #58718d;
 }
 
+/* ---- Tema hielo oscuro: azul nocturno + cian helado ---- */
+html.theme-hielo-oscuro {
+  color-scheme: dark;
+  --color-fondo: #03080d;
+  --color-superficie: #09141e;
+  --color-tarea: #0d1c28;
+  --color-borde: #183345;
+
+  --color-musgo-50: #081923;
+  --color-musgo-100: #0b2635;
+  --color-musgo-200: #0f3b4e;
+  --color-musgo-300: #15546a;
+  --color-musgo-400: #29839c;
+  --color-musgo-500: #007bff;
+  --color-musgo-600: #73c5d6;
+  --color-musgo-700: #9cdae4;
+  --color-musgo-800: #c0e9ef;
+  --color-musgo-900: #def6f8;
+
+  --color-salvia-50: #07151e;
+  --color-salvia-100: #0b222e;
+  --color-salvia-200: #103747;
+  --color-salvia-300: #164c61;
+
+  --color-tinta: #d9eef2;
+  --color-tinta-suave: #7899a5;
+}
+
 @layer base {
   html {
     color-scheme: light;

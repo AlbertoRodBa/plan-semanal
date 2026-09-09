@@ -8,8 +8,8 @@ function IconoFantasma({ size = 16 }: { size?: number }) {
 type Props = {
   busqueda: string;
   onBusqueda: (v: string) => void;
-  tema: 'claro' | 'oscuro' | 'oscuro-pro' | 'fantasma' | 'hielo';
-  onSeleccionarTema: (tema: 'claro' | 'oscuro' | 'oscuro-pro' | 'fantasma' | 'hielo') => void;
+  tema: 'claro' | 'oscuro' | 'oscuro-pro' | 'fantasma' | 'hielo' | 'hielo-oscuro';
+  onSeleccionarTema: (tema: 'claro' | 'oscuro' | 'oscuro-pro' | 'fantasma' | 'hielo' | 'hielo-oscuro') => void;
   vista: 'horizontal' | 'vertical';
   onCambiarVista: (vista: 'horizontal' | 'vertical') => void;
   onRestablecer: () => void;
@@ -32,6 +32,7 @@ export function Header({
     { valor: 'oscuro-pro', label: 'Oscuro Pro', icon: MoonStar },
     { valor: 'fantasma', label: 'Fantasma', icon: IconoFantasma },
     { valor: 'hielo', label: 'Hielo', icon: Snowflake },
+    { valor: 'hielo-oscuro', label: 'Hielo Oscuro', icon: Snowflake },
   ] as const;
 
   const IconoTemaActual = opcionesTema.find((opcion) => opcion.valor === tema)?.icon ?? Sun;

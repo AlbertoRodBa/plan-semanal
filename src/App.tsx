@@ -41,7 +41,7 @@ function diaDeHoy(): DiaSemana {
   return mapa[indice];
 }
 
-type Tema = 'claro' | 'oscuro' | 'oscuro-pro' | 'fantasma' | 'hielo';
+type Tema = 'claro' | 'oscuro' | 'oscuro-pro' | 'fantasma' | 'hielo' | 'hielo-oscuro';
 
 type Vista = 'horizontal' | 'vertical';
 
@@ -68,17 +68,19 @@ export default function App() {
       'oscuro-pro': 'oscuro-pro',
       fantasma: 'fantasma',
       hielo: 'hielo',
+      'hielo-oscuro': 'hielo-oscuro',
     };
 
     const current = temas[tema];
     document.documentElement.dataset.theme = current;
     document.documentElement.classList.toggle(
       'dark',
-      current === 'dark' || current === 'oscuro-pro' || current === 'fantasma'
+      current === 'dark' || current === 'oscuro-pro' || current === 'fantasma' || current === 'hielo-oscuro'
     );
     document.documentElement.classList.toggle('theme-fantasma', current === 'fantasma');
     document.documentElement.classList.toggle('theme-oscuro-pro', current === 'oscuro-pro');
     document.documentElement.classList.toggle('theme-hielo', current === 'hielo');
+    document.documentElement.classList.toggle('theme-hielo-oscuro', current === 'hielo-oscuro');
   }, [tema]);
 
   const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 4 } }));
