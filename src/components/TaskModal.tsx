@@ -122,7 +122,7 @@ export function TaskModal({ tarea, diaInicial, categorias, onGuardar, onCerrar }
           <button
             type="submit"
             disabled={!texto.trim()}
-            className="rounded-lg bg-musgo-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-musgo-600 disabled:opacity-40"
+            className="boton-acento rounded-lg bg-musgo-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-musgo-600 disabled:opacity-40"
           >
             {tarea ? 'Guardar cambios' : 'Agregar tarea'}
           </button>

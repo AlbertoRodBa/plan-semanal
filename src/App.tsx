@@ -41,7 +41,7 @@ function diaDeHoy(): DiaSemana {
   return mapa[indice];
 }
 
-type Tema = 'claro' | 'oscuro' | 'oscuro-pro' | 'fantasma' | 'hielo' | 'hielo-oscuro';
+type Tema = 'claro' | 'oscuro' | 'oscuro-pro' | 'oscuro-total' | 'ambar' | 'pastel' | 'fantasma' | 'hielo' | 'hielo-oscuro';
 
 type Vista = 'horizontal' | 'vertical';
 
@@ -66,6 +66,9 @@ export default function App() {
       claro: 'claro',
       oscuro: 'dark',
       'oscuro-pro': 'oscuro-pro',
+      'oscuro-total': 'oscuro-total',
+      ambar: 'ambar',
+      pastel: 'pastel',
       fantasma: 'fantasma',
       hielo: 'hielo',
       'hielo-oscuro': 'hielo-oscuro',
@@ -75,10 +78,13 @@ export default function App() {
     document.documentElement.dataset.theme = current;
     document.documentElement.classList.toggle(
       'dark',
-      current === 'dark' || current === 'oscuro-pro' || current === 'fantasma' || current === 'hielo-oscuro'
+      current === 'dark' || current === 'oscuro-pro' || current === 'oscuro-total' || current === 'fantasma' || current === 'hielo-oscuro'
     );
     document.documentElement.classList.toggle('theme-fantasma', current === 'fantasma');
     document.documentElement.classList.toggle('theme-oscuro-pro', current === 'oscuro-pro');
+    document.documentElement.classList.toggle('theme-oscuro-total', current === 'oscuro-total');
+    document.documentElement.classList.toggle('theme-ambar', current === 'ambar');
+    document.documentElement.classList.toggle('theme-pastel', current === 'pastel');
     document.documentElement.classList.toggle('theme-hielo', current === 'hielo');
     document.documentElement.classList.toggle('theme-hielo-oscuro', current === 'hielo-oscuro');
   }, [tema]);

@@ -103,7 +103,7 @@ export function Habitos({ habitos, onAgregar, onToggleDia, onEliminar }: Props) 
           <button
             type="submit"
             disabled={!texto.trim()}
-            className="flex items-center gap-1 rounded-lg bg-musgo-500 px-3 py-1.5 text-xs font-medium text-white transition hover:bg-musgo-600 disabled:opacity-40"
+            className="boton-acento flex items-center gap-1 rounded-lg bg-musgo-500 px-3 py-1.5 text-xs font-medium text-white transition hover:bg-musgo-600 disabled:opacity-40"
           >
             <Plus size={13} /> Agregar
           </button>

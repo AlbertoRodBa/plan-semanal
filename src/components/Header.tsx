@@ -1,4 +1,4 @@
-import { Columns3, Moon, MoonStar, RotateCcw, Rows3, Search, Snowflake, Sun } from 'lucide-react';
+import { Columns3, Moon, MoonStar, Palette, RotateCcw, Rows3, Search, Snowflake, Sun, Zap } from 'lucide-react';
 import { useState } from 'react';
 
 function IconoFantasma({ size = 16 }: { size?: number }) {
@@ -8,8 +8,8 @@ function IconoFantasma({ size = 16 }: { size?: number }) {
 type Props = {
   busqueda: string;
   onBusqueda: (v: string) => void;
-  tema: 'claro' | 'oscuro' | 'oscuro-pro' | 'fantasma' | 'hielo' | 'hielo-oscuro';
-  onSeleccionarTema: (tema: 'claro' | 'oscuro' | 'oscuro-pro' | 'fantasma' | 'hielo' | 'hielo-oscuro') => void;
+  tema: 'claro' | 'oscuro' | 'oscuro-pro' | 'oscuro-total' | 'ambar' | 'pastel' | 'fantasma' | 'hielo' | 'hielo-oscuro';
+  onSeleccionarTema: (tema: 'claro' | 'oscuro' | 'oscuro-pro' | 'oscuro-total' | 'ambar' | 'pastel' | 'fantasma' | 'hielo' | 'hielo-oscuro') => void;
   vista: 'horizontal' | 'vertical';
   onCambiarVista: (vista: 'horizontal' | 'vertical') => void;
   onRestablecer: () => void;
@@ -30,6 +30,9 @@ export function Header({
     { valor: 'claro', label: 'Claro', icon: Sun },
     { valor: 'oscuro', label: 'Oscuro', icon: Moon },
     { valor: 'oscuro-pro', label: 'Oscuro Pro', icon: MoonStar },
+    { valor: 'oscuro-total', label: 'Oscuro total', icon: MoonStar },
+    { valor: 'ambar', label: 'Ámbar', icon: Zap },
+    { valor: 'pastel', label: 'Pastel', icon: Palette },
     { valor: 'fantasma', label: 'Fantasma', icon: IconoFantasma },
     { valor: 'hielo', label: 'Hielo', icon: Snowflake },
     { valor: 'hielo-oscuro', label: 'Hielo Oscuro', icon: Snowflake },
@@ -41,7 +44,7 @@ export function Header({
     <header className="relative z-30 mb-6 rounded-2xl border border-borde bg-superficie/90 p-4 shadow-[0_1px_2px_rgba(20,23,18,0.04),0_8px_22px_rgba(20,23,18,0.04)] backdrop-blur-sm sm:p-5">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-musgo-500 text-white shadow-sm shadow-musgo-500/30">
+          <div className="boton-acento flex h-10 w-10 items-center justify-center rounded-xl bg-musgo-500 text-white shadow-sm shadow-musgo-500/30">
             <i className="fa-solid fa-book text-sm" aria-hidden="true" />
           </div>
           <div>

@@ -61,7 +61,7 @@ export function ConfirmModal({
             ref={botonRef}
             onClick={onConfirmar}
             className={`rounded-lg px-4 py-2 text-sm font-medium text-white transition ${
-              peligroso ? 'bg-red-700 hover:bg-red-800' : 'bg-musgo-500 hover:bg-musgo-600'
+              peligroso ? 'bg-red-700 hover:bg-red-800' : 'boton-acento bg-musgo-500 hover:bg-musgo-600'
             }`}
           >
             {textoConfirmar}
